@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study & Play Portal - Pizza Edition</title>
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0e0e0e;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Navigation Bar */
+    .top-nav {
+      background: #1a1a1a;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .top-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .top-nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 2em 1em;
+      background: linear-gradient(to bottom right, #1e1e1e, #292929);
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      color: #ffcc00;
+    }
+
+    header p {
+      font-size: 1em;
+      margin-top: 0.5em;
+      color: #ccc;
+    }
+
+    /* Sections */
+    section {
+      padding: 1.5em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #ffcc00;
+      margin-bottom: 1em;
+      border-bottom: 2px solid #ffcc00;
+      padding-bottom: 0.3em;
+      font-size: 1.5em;
+    }
+
+    .subject-grid, .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1em;
+    }
+
+    .card {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      padding: 1em;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5em;
+      color: #fff;
+      font-size: 1.1em;
+    }
+
+    .card p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .card button {
+      margin-top: 1em;
+      background: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 0.5em 1em;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.95em;
+      width: 100%;
+    }
+
+    .card button:hover {
+      background: #e6b800;
+    }
+
+    /* Passcode */
+    .passcode-section {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    .passcode-section input {
+      padding: 0.5em;
+      width: 80%;
+      max-width: 250px;
+      margin: 0.5em auto;
+      font-size: 1em;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .passcode-section button {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      background: #ffcc00;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .iframe-container {
+      width: 100%;
+      height: 75vh;
+      margin-top: 2em;
+      display: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em 1em;
+      background: #111;
+      font-size: 0.85em;
+      color: #777;
+    }
+
+    /* Mobile Specific Enhancements */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+
+      header p {
+        font-size: 0.9em;
+      }
+
+      .top-nav ul {
+        gap: 1em;
+        font-size: 0.9em;
+      }
+
+      .card button {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <ul>
+      <li><a href="#math">Math</a></li>
+      <li><a href="#science">Science</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#english">English</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#games">Games</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Study & Play Portal</h1>
+    <p>Where Learning Meets Fun – Pizza Edition Style 🍕</p>
+  </header>
+
+  <section id="math">
+    <h2>📐 Math</h2>
+    <div class="subject-grid">
+      <div class="card"><h3>Formulas</h3><p>Key algebra, geometry, and calculus formulas.</p></div>
+      <div class="card"><h3>Practice Problems</h3><p>Daily challenges to sharpen your skills.</p></div>
+    </div>
+  </section>
+
+  <section id="science">
+    <h2>🔬 Science</h2>
+    <div class="subject-grid">
+      <div class="card"><h3>Periodic Table</h3><p>Interactive periodic table reference.</p></div>
+      <div class="card"><h3>Experiments</h3><p>Safe science experiments to try at home.</p></div>
+    </div>
+  </section>
+
+  <section id="history">
+    <h2>📜 History</h2>
+    <div class="subject-grid">
+      <div class="card"><h3>Timelines</h3><p>Key events across world history.</p></div>
+      <div class="card"><h3>Famous Figures</h3><p>Explore influential historical personalities.</p></div>
+    </div>
+  </section>
+
+  <section id="english">
+    <h2>📖 English</h2>
+    <div class="subject-grid">
+      <div class="card"><h3>Grammar Guide</h3><p>Brush up on grammar rules and usage.</p></div>
+      <div class="card"><h3>Essay Starters</h3><p>Jumpstart your writing with prompts.</p></div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2>🛠️ Study Tools</h2>
+    <div class="subject-grid">
+      <div class="card"><h3>Dictionary</h3><p>Look up word definitions quickly.</p></div>
+      <div class="card"><h3>Plagiarism Checker</h3><p>Ensure originality in your work.</p></div>
+    </div>
+  </section>
+
+  <section id="games">
+    <h2>🎮 Games</h2>
+    <div class="passcode-section">
+      <input type="password" id="passcodeInput" placeholder="Enter passcode">
+      <button onclick="checkPasscode()">Unlock</button>
+      <div id="accessMessage" style="margin-top:1em;"></div>
+    </div>
+
+    <div id="standardGames" class="game-grid" style="display: none; margin-top: 2em;">
+      <div class="card">
+        <h3>Snake</h3>
+        <p>Classic snake game. Avoid walls and grow longer!</p>
+        <button onclick="loadGame('https://mathplayground.com/Snake.html')">Play Now</button>
+      </div>
+      <div class="card">
+        <h3>2048</h3>
+        <p>Combine numbers to reach 2048.</p>
+        <button onclick="loadGame('https://play2048.co')">Play Now</button>
+      </div>
+    </div>
+
+    <div id="secretGames" class="game-grid" style="display: none; margin-top: 2em;">
+      <div class="card">
+        <h3>Run 3</h3>
+        <p>Run through space tunnels in this fast-paced game.</p>
+        <button onclick="loadGame('https://run3.io')">Play Now</button>
+      </div>
+      <div class="card">
+        <h3>Friday Night Funkin'</h3>
+        <p>Rhythm-based music game showdown!</p>
+        <button onclick="loadGame('https://kdata1.com/2020/11/Funkin/index.html')">Play Now</button>
+      </div>
+    </div>
+
+    <div class="iframe-container" id="gameFrameContainer">
+      <iframe id="gameFrame"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Study & Play Pizza Edition | Made with 🍕 + ☕
+  </footer>
+
+  <script>
+    function checkPasscode() {
+      const input = document.getElementById('passcodeInput').value.trim();
+      const standard = document.getElementById('standardGames');
+      const secret = document.getElementById('secretGames');
+      const msg = document.getElementById('accessMessage');
+
+      if (input === "Anthony") {
+        standard.style.display = "grid";
+        secret.style.display = "none";
+        msg.textContent = "✅ Standard games unlocked!";
+      } else if (input === "Secret123") {
+        standard.style.display = "none";
+        secret.style.display = "grid";
+        msg.textContent = "🔓 Secret games unlocked!";
+      } else {
+        msg.textContent = "❌ Incorrect passcode.";
+        standard.style.display = "none";
+        secret.style.display = "none";
+      }
+    }
+
+    function loadGame(url) {
+      const container = document.getElementById('gameFrameContainer');
+      const frame = document.getElementById('gameFrame');
+      frame.src = url;
+      container.style.display = 'block';
+      window.scrollTo({ top: container.offsetTop - 50, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
